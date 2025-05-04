@@ -1,6 +1,6 @@
 import pytest 
-from code.menuitem import MenuItem
-from code.menuitemextractor import clean_scraped_text, clean_price, extract_menu_item
+from assignment07Hackworth2026.code.menuitem import MenuItem
+from assignment07Hackworth2026.code.menuitemextractor import clean_scraped_text, clean_price, extract_menu_item
 
 
 TEST_DATA = [
