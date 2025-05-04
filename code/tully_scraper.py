@@ -34,7 +34,7 @@ def tullyscraper(playwright: Playwright) -> None:
 
     # Save to DataFrame and CSV
     df = pd.DataFrame(menu_items)
-    df.to_csv('tullys_menu.csv', index=False)
+    df.to_csv('code/solutions/cache/tullys_menu.csv', index=False)
     print("Saved tullys_menu.csv")
     # ---------------------
     context.close()

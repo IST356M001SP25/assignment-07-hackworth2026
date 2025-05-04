@@ -91,6 +91,7 @@ def test_extract_menu_item_expect_No_desciption_available():
     item = extract_menu_item("TEST", text)
     print(f"Expect: {item} to be a MenuItem type")
     assert item.description.lower().startswith("no description available")
+    
 
 def test_extract_menu_item_expect_price_1549():
     text = TEST_DATA[1] # this one has a price of 15.49
