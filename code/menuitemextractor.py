@@ -15,17 +15,22 @@ def clean_price(price: str) -> float:
     except ValueError:
         raise ValueError(f"Invalid price format: {price}")
 
+UNWANTED = ['NEW!', 'NEW', 'GS', 'V', 'P', 'S']
+
 def clean_scraped_text(scraped_text: str) -> list[str]:
-    # Split scraped text by newlines, remove empty lines, strip whitespace
     lines = scraped_text.strip().split('\n')
-    return [line.strip() for line in lines if line.strip()]
+    cleaned = [line.strip() for line in lines if line.strip()]
+    cleaned = [line for line in cleaned if line not in UNWANTED]
+    return cleaned
+
 
 def extract_menu_item(title: str, scraped_text: str) -> MenuItem:
     lines = clean_scraped_text(scraped_text)
     price = 0.0
     description = "No description available"
 
-    for line in lines:
+    # extract price and remove it
+    for line in lines[:]:
         try:
             price = clean_price(line)
             lines.remove(line)
@@ -33,7 +38,10 @@ def extract_menu_item(title: str, scraped_text: str) -> MenuItem:
         except ValueError:
             continue
 
-    if lines:
+    # if remaining line count is 1, fallback to "no description"
+    if len(lines) == 1:
+        description = "No description available"
+    elif lines:
         description = lines[0]
 
     return MenuItem(name=title, category=title, price=price, description=description)

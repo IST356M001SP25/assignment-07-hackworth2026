@@ -23,3 +23,4 @@ Examples:
 
 `--- Reflection Below This Line ---`
 
+I felt good with this assignment as well, the issue I dealt with in assigment 6 applies to this assigment as well, where I had to use "PYTHONPATH=. pytest" to actually get my test to get the imports to work correctly. Aside from that building the scrapper code was a bit of a trial and error situation. Where I look upon the test code to understand the dynamic more fuildly so I could implement the design. Overall, this assignment was challenging but, it was easier after doing one file than the next.
