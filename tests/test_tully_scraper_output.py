@@ -6,7 +6,7 @@ import pandas as pd
 # TODO RUN YOUR SCRAPER BEFORE RUNNING THESE TESTS!
 #
 
-FILE = "code/solutions/cache/tullys_menu.csv"
+FILE = "assignment07Hackworth2026/code/solutions/cache/tullys_menu.csv"
 
 def test_should_pass():
     print("\nAlways True!")

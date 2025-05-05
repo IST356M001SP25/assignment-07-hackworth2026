@@ -1,7 +1,7 @@
 import re
 from playwright.sync_api import Playwright, sync_playwright
-from menuitemextractor import extract_menu_item
-from menuitem import MenuItem
+from assignment07Hackworth2026.code.menuitemextractor import extract_menu_item
+from assignment07Hackworth2026.code.menuitem import MenuItem
 import pandas as pd
 
 def tullyscraper(playwright: Playwright) -> None:
@@ -34,7 +34,7 @@ def tullyscraper(playwright: Playwright) -> None:
 
     # Save to DataFrame and CSV
     df = pd.DataFrame(menu_items)
-    df.to_csv('code/solutions/cache/tullys_menu.csv', index=False)
+    df.to_csv('assignment07Hackworth2026/code/solutions/cache/tullys_menu.csv', index=False)
     print("Saved tullys_menu.csv")
     # ---------------------
     context.close()
